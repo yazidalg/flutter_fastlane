@@ -1,6 +1,6 @@
 # flutter_fastlane
 
-A new Flutter project.
+Flutter Fastlane ☕ 🇮🇩
 
 ## Getting Started
 
