@@ -17,21 +17,24 @@ default_platform(:android)
 
 platform :android do
   desc "Runs all the tests"
-  lane :test do
-    gradle(task: "test")
+  lane :android_test_app do
+    gradle(
+      task: "test", 
+      build_type: "Release",
+    )
+    firebase_app_distribution(
+      app: "1:435028589225:android:9224ce79f031a4237387b8",
+      testers: "zacky@rumahkisah.id, yazid.al2418@gmail.com",
+      release_notes: "1.5.13",
+      firebase_cli_path: "/usr/local/bin/firebase",
+      apk_path: "../build/app/outputs/apk/release/app-release.apk"
+  )
   end
 
   desc "Submit a new Beta Build to Crashlytics Beta"
   lane :android_beta_app do
     gradle(task: "clean assembleRelease")
     crashlytics
-    firebase_app_distribution(
-      app: "1:435028589225:android:9224ce79f031a4237387b8",
-      testers: "zacky@rumahkisah.id",
-      release_notes: "1.5.13",
-      firebase_cli_path: "/usr/local/bin/firebase",
-      apk_path: "../build/app/outputs/apk/release/app-release.apk"
-  )
   
     # sh "your_script.sh"
     # You can also use other beta testing services here
