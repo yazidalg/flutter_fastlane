@@ -17,7 +17,20 @@ default_platform(:ios)
 
 platform :ios do
   desc "Description of what the lane does"
-  lane :custom_lane do
+  lane :ios_beta_app do
+    build_app(
+      scheme: "Runner",
+      archive_path: "./build/Runner.xcarchive",
+      export_method: "development",
+      output_directory: "./build/Runner"
+  )
+    firebase_app_distribution(
+      app: "1:435028589225:ios:f25ee85f52dacce77387b8",
+      testers: "zacky@rumahkisah.id",
+      release_notes: "1.5.13",
+      firebase_cli_path: "/usr/local/bin/firebase",
+      ipa_path: "./build/Runner/Runner.ipa"
+  )
     # add actions here: https://docs.fastlane.tools/actions
   end
 end
