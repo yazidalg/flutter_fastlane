@@ -21,11 +21,18 @@ platform :android do
     gradle(task: "test")
     firebase_app_distribution(
       app: "1:435028589225:android:9224ce79f031a4237387b8",
-      testers: "zacky@rumahkisah.id, yazid.al2418@gmail.com",
+      testers: "yazid.al2418@gmail.com",
+      release_notes: "",
       firebase_cli_path: "/usr/local/bin/firebase",
       apk_path: "../build/app/outputs/apk/release/app-release.apk"
   )
-  changelog_from_git_commits 
+    changelog_from_git_commits( 
+      pretty: "- (%ae) %s",
+      date_format: "short",
+      match_lightweight_tag: false,  
+      merge_commit_filtering: "exclude_merges" 
+  )
+  changelog_from_git_commits
   end
 
   desc "Submit a new Beta Build to Crashlytics Beta"
