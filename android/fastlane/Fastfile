@@ -18,17 +18,14 @@ default_platform(:android)
 platform :android do
   desc "Runs all the tests"
   lane :android_test_app do
-    gradle(
-      task: "test", 
-      build_type: "Release",
-    )
+    gradle(task: "test")
     firebase_app_distribution(
       app: "1:435028589225:android:9224ce79f031a4237387b8",
       testers: "zacky@rumahkisah.id, yazid.al2418@gmail.com",
-      release_notes: "1.5.13",
       firebase_cli_path: "/usr/local/bin/firebase",
       apk_path: "../build/app/outputs/apk/release/app-release.apk"
   )
+  changelog_from_git_commits 
   end
 
   desc "Submit a new Beta Build to Crashlytics Beta"
