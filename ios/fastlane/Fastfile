@@ -26,11 +26,17 @@ platform :ios do
   )
     firebase_app_distribution(
       app: "1:435028589225:ios:f25ee85f52dacce77387b8",
-      testers: "zacky@rumahkisah.id",
-      release_notes: "1.5.13",
+      testers: "zacky@rumahkisah.id, yazid.al2418@gmail.com",
+      release_notes: "Update Version Number Name And Code",
       firebase_cli_path: "/usr/local/bin/firebase",
       ipa_path: "./build/Runner/Runner.ipa"
   )
+    increment_version_number(
+      xcodeproj: "/Users/yazidalghazali/Flutter/developer/flutter_fastlane/ios/Runner.xcodeproj"
+    )
+    increment_build_number(
+      xcodeproj: "/Users/yazidalghazali/Flutter/developer/flutter_fastlane/ios/Runner.xcodeproj" # (optional, you must specify the path to your main Xcode project if it is not in the project root directory)
+  ) 
     # add actions here: https://docs.fastlane.tools/actions
   end
 end
