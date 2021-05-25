@@ -4,7 +4,7 @@ Flutter Fastlane ☕ 🇮🇩
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is a trial how to use flutter fastlane with app distribution provided by Firebase, app distribution makes testing application easier. 
 
 A few resources to get you started if this is your first Flutter project:
 
