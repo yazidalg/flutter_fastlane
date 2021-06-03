@@ -17,7 +17,7 @@ default_platform(:android)
 
 platform :android do
   desc "Runs all the tests"
-  lane :android_test_app do
+  lane :test do
     gradle(task: "test")
     firebase_app_distribution(
       app: "1:435028589225:android:9224ce79f031a4237387b8",
