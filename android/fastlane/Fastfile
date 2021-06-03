@@ -18,11 +18,17 @@ default_platform(:android)
 platform :android do
   desc "Runs all the tests"
   lane :test do
+    desc "Build Apk"
+    Dir.chdir '../..' do
+      sh('flutter', 'clean')
+      sh('flutter', 'pub', 'get')
+      sh('flutter', 'build', 'apk', '--release')
+    end
     gradle(task: "test")
     firebase_app_distribution(
       app: "1:435028589225:android:9224ce79f031a4237387b8",
       testers: "yazid.al2418@gmail.com",
-      release_notes: "Autoincrement App",
+      release_notes: "#{File.read('/fastlane/changelog.txt')}",
       firebase_cli_path: "/usr/local/bin/firebase",
       apk_path: "../build/app/outputs/apk/release/app-release.apk"
   )
