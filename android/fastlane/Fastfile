@@ -17,18 +17,20 @@ default_platform(:android)
 
 platform :android do
   desc "Runs all the tests"
-  lane :test do
+  lane :test do |options|
     desc "Build Apk"
+    build_number = last_git_tag()
     Dir.chdir '../..' do
       sh('flutter', 'clean')
       sh('flutter', 'pub', 'get')
-      sh('flutter', 'build', 'apk', '--release')
+      sh('flutter', 'build', 'apk', '--release', "--build-number=#{build_number.to_i}")
     end
-    gradle(task: "test")
+  next_version = lane_context[SharedValues::RELEASE_NEXT_VERSION]
+  build_number = next_version
     firebase_app_distribution(
       app: "1:435028589225:android:9224ce79f031a4237387b8",
       testers: "yazid.al2418@gmail.com",
-      release_notes: "#{File.read('/fastlane/changelog.txt')}",
+      release_notes: build_number.to_s,
       firebase_cli_path: "/usr/local/bin/firebase",
       apk_path: "../build/app/outputs/apk/release/app-release.apk"
   )
