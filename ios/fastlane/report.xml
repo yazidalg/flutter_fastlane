@@ -5,42 +5,42 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.000362">
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.00032">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: flutter pub get" time="4.037324">
+      <testcase classname="fastlane.lanes" name="1: flutter pub get" time="2.048232">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: flutter clean" time="12.523489">
+      <testcase classname="fastlane.lanes" name="2: flutter clean" time="10.21526">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: flutter build ipa --release" time="63.709653">
+      <testcase classname="fastlane.lanes" name="3: flutter build ipa --release" time="80.381012">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="4: build_app" time="61.260411">
+      <testcase classname="fastlane.lanes" name="4: build_app" time="80.501043">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="5: firebase_app_distribution" time="22.134639">
+      <testcase classname="fastlane.lanes" name="5: firebase_app_distribution" time="21.286288">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="6: increment_version_number" time="0.491207">
+      <testcase classname="fastlane.lanes" name="6: increment_version_number" time="0.532081">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="7: increment_build_number" time="0.716342">
+      <testcase classname="fastlane.lanes" name="7: increment_build_number" time="0.805369">
         
       </testcase>
     
